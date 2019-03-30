@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 @import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Cardo:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 html, body {
     margin: 0;
@@ -7,7 +9,9 @@ html, body {
     height: 100%;
     width: 100;
     scroll-behavior: smooth;
-    background-color: #000000;
+    background-color: #484d5c;
+    
+    
 }
 
 .landing {
@@ -16,6 +20,7 @@ html, body {
     margin: auto;
     display: table;
     top: 0;
+    background-color: black;
 }
 
 .landing .inner {
@@ -32,7 +37,7 @@ html, body {
 }
 
 .contents h1 {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Oswald', sans-serif;
     color: floralwhite;
     text-shadow: 0px 0px 100px #FFFFFF;
     font-size: 410%;
@@ -46,8 +51,8 @@ html, body {
 
     @media screen and (max-width: 400px) {
         .contents h1 {
-            font-family: 'Nunito', sans-serif;
-            color: #FF0000;
+            font-family: 'Oswald', sans-serif;
+            color: #c0ccd4;
             text-shadow: 0px 0px 300px #000000;
             font-size: 300%;
         }
@@ -56,75 +61,120 @@ html, body {
 .contents button {
     font-family: 'Oswald', sans-serif;
     border-radius: 9px;
-    color: #FF0000;
+    color: #c0ccd4;
     font-size: 135%;
     padding: 5px 20px;
-    border: solid #FF0000 3px;
+    border: solid #c0ccd4 3px;
     text-transform: uppercase;
     text-decoration: none;
 }
 
 .contents button:hover {
-    background-color: #FF0000;
-    border: solid #FF0000 3px;
+    background-color: #c0ccd4;
+    border: solid #c0ccd4 3px;
     color: black;
 }
  
 .stateDrop {
-    padding-top: 30px;
-    padding-bottom: 125px;
-    padding-right: 20px;
+    margin-top: -50px;
+    padding-right: 50px;
+    margin-bottom: -150px
 }
 
 .stateDrop button {
     font-family: 'Oswald', sans-serif;
     border-radius: 9px;
-    color: #FF0000;
+    color: #c0ccd4;
     font-size: 135%;
     padding: 5px 20px;
-    border: solid #FF0000 3px;
+    border: solid #c0ccd4 3px;
     text-transform: uppercase;
     text-decoration: none;
 }
 
 .stateDrop button:hover {
-    background-color: #FF0000;
-    border: solid #FF0000 3px;
+    background-color: #c0ccd4;
+    border: solid #c0ccd4 3px;
     color: black;
 }
  
 .stateDrop button:active {
-    background-color: #FF0000;
-    border: solid #FF0000 3px;
+    background-color: #c0ccd4;
+    border: solid #c0ccd4 3px;
     color: black;
 }
 
-.yearDrop {
-    padding-top: 30px;
-    padding-bottom: 125px;
-    padding-left: 20px;
-    
+
+.d-flex {
+    padding-top: 80px;
 }
 
-.yearDrop button {
+.axis { 
+    font: 12px sans-serif; 
+    font-family: 'Montserrat', sans-serif;
+    color: #c0ccd4;
+}
+
+.dropdown-menu{
+    height:200px;
+    overflow-y:auto;
+}
+
+.styledWidthClass {
+    width: 100%;
+    margin-top: -38px;
+    margin-bottom: -150px;
+    padding-left: 40px;
+}
+
+.slider {
+    width: 100%;
+}
+
+.yearHeader {
+    margin-top: -50px;
+    margin-bottom: -150px
+    padding-right: 20px;
+}
+
+.yearHeader button {
     font-family: 'Oswald', sans-serif;
     border-radius: 9px;
-    color: #FF0000;
+    color: #c0ccd4;
     font-size: 135%;
     padding: 5px 20px;
-    border: solid #FF0000 3px;
+    border: solid #c0ccd4 3px;
     text-transform: uppercase;
     text-decoration: none;
 }
 
-.yearDrop button:hover {
-    background-color: #FF0000;
-    border: solid #FF0000 3px;
-    color: black;
+.yearHeader button:hover {
+    background-color: none;
+    border: solid #c0ccd4 3px;
 }
  
-.yearDrop button:active {
-    background-color: #FF0000;
-    border: solid #FF0000 3px;
-    color: black;
+.stateHead {
+    padding-right: 40px;
+    margin-bottom: -120px;
 }
+
+.yearHead {
+    padding-right: 40px;
+    margin-bottom: -120px;
+    
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    color: floralwhite;
+    font-size: 36pt;
+
+}
+
+.container {
+    margin-bottom: -40px !important;
+}
+
+.bar:hover {
+    fill: #F56C4E;
+  }

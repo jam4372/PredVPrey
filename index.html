@@ -9,57 +9,97 @@
             <script src="https://d3js.org/d3.v5.min.js"></script>
             <script src="PredvsPrey.js"></script> 
             <link rel="stylesheet" type="text/css" href="main.css">
+            <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
             <title>PredvsPrey</title>
         </head>
         <body>
             <section class="landing">
                 <div class="inner">
                     <div class="contents">
-                        <h1>Pred V Prey</h1>
-                        <button type="button" onclick="scrollLanding()"class="btn btn-outline-secondary btn-lg">Enter</button>
+                        <h1>Predator vs Prey</h1>
+                        <button type="button" onclick="scrollLanding()" class="btn btn-outline-secondary btn-lg">Enter</button>
                     </div>
                 </div>
             </section>
 
             <div class="container">
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-start">
                     <div class="stateDrop">
                         <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         State
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">1999</a>
-                            <a class="dropdown-item" href="#">2000</a>
-                            <a class="dropdown-item" href="#">2001</a>
+                            <a class="dropdown-item" id="Alabama" onclick="getState()">Alabama</a>
+                            <a class="dropdown-item" id="Alaska" onclick="getState()">Alaska</a>
+                            <a class="dropdown-item" id="Arizona" onclick="getState()">Arizona</a>
+                            <a class="dropdown-item" id="Arkansas" onclick="getState()">Arkansas</a>
+                            <a class="dropdown-item" id="California" onclick="getState()">California</a>
+                            <a class="dropdown-item" id="Colorado" onclick="getState()">Colorado</a>
+                            <a class="dropdown-item" id="Connecticut" onclick="getState()">Connecticut</a>
+                            <a class="dropdown-item" id="Delaware" onclick="getState()">Delaware</a>
+                            <a class="dropdown-item" id="Florida" onclick="getState()">Florida</a>
+                            <a class="dropdown-item" id="Georgia" onclick="getState()">Georgia</a>
+                            <a class="dropdown-item" id="Hawaii" onclick="getState()">Hawaii</a>
+                            <a class="dropdown-item" id="Idaho" onclick="getState()">Idaho</a>
+                            <a class="dropdown-item" id="Illinois" onclick="getState()">Illinois</a>
+                            <a class="dropdown-item" id="Indiana" onclick="getState()">Indiana</a>
+                            <a class="dropdown-item" id="Iowa" onclick="getState()">Iowa</a>
+                            <a class="dropdown-item" id="Kansas" onclick="getState()">Kansas</a>
+                            <a class="dropdown-item" id="Kentucky" onclick="getState()">Kentucky</a>
+                            <a class="dropdown-item" id="Louisiana" onclick="getState()">Louisiana</a>
+                            <a class="dropdown-item" id="Maine" onclick="getState()">Maine</a>
+                            <a class="dropdown-item" id="Maryland" onclick="getState()">Maryland</a>
+                            <a class="dropdown-item" id="Massachusets" onclick="getState()">Massachusets</a>
+                            <a class="dropdown-item" id="Michigan" onclick="getState()">Michigan</a>
+                            <a class="dropdown-item" id="Minnesota" onclick="getState()">Minnesota</a>
+                            <a class="dropdown-item" id="Mississippi" onclick="getState()">Mississippi</a>
+                            <a class="dropdown-item" id="Missouri" onclick="getState()">Missouri</a>
+                            <a class="dropdown-item" id="Montana" onclick="getState()">Montana</a>
+                            <a class="dropdown-item" id="Nebraska" onclick="getState()">Nebraska</a>
+                            <a class="dropdown-item" id="Nevada" onclick="getState()">Nevada</a>
+                            <a class="dropdown-item" id="New Hampshire" onclick="getState()">New Hampshire</a>
+                            <a class="dropdown-item" id="New Jersey" onclick="getState()">New Jersey</a>
+                            <a class="dropdown-item" id="New Mexico" onclick="getState()">New Mexico</a>
+                            <a class="dropdown-item" id="New York" onclick="getState()">New York</a>
+                            <a class="dropdown-item" id="North Carolina" onclick="getState()">North Carolina</a>
+                            <a class="dropdown-item" id="North Dakota" onclick="getState()">North Dakota</a>
+                            <a class="dropdown-item" id="Ohio" onclick="getState()">Ohio</a>
+                            <a class="dropdown-item" id="Oklahoma" onclick="getState()">Oklahoma</a>
+                            <a class="dropdown-item" id="Oregon" onclick="getState()">Oregon</a>
+                            <a class="dropdown-item" id="Pennsylvania" onclick="getState()">Pennsylvania</a>
+                            <a class="dropdown-item" id="Rhode Island" onclick="getState()">Rhode Island</a>
+                            <a class="dropdown-item" id="South Carolina" onclick="getState()">South Carolina</a>
+                            <a class="dropdown-item" id="South Dakota" onclick="getState()">South Dakota</a>
+                            <a class="dropdown-item" id="Tennessee" onclick="getState()">Tennessee</a>
+                            <a class="dropdown-item" id="Texas" onclick="getState()">Texas</a>
+                            <a class="dropdown-item" id="Utah" onclick="getState()">Utah</a>
+                            <a class="dropdown-item" id="Vermont" onclick="getState()">Vermont</a>
+                            <a class="dropdown-item" id="Virginia" onclick="getState()">Virginia</a>
+                            <a class="dropdown-item" id="Washington" onclick="getState()">Washington</a>
+                            <a class="dropdown-item" id="West Virginia" onclick="getState()">West Virginia</a>
+                            <a class="dropdown-item" id="Wisconsin" onclick="getState()">Wisconsin</a>
+                            <a class="dropdown-item" id="Wyoming" onclick="getState()">Wyoming</a>
+
                         </div>
                     </div>
-                    <div class="yearDrop">
-                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Year
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">1999</a>
-                                <a class="dropdown-item" href="#">2000</a>
-                                <a class="dropdown-item" href="#">2001</a>
-                            </div>
-                        </div>
+                    <div class="yearHeader">
+                        <button class="btn btn-outline-secondary" type="button" id="dropdownMenuButton" disabled>
+                        Year
+                        </button>
+                    </div>     
+                    <div class="styledWidthClass">
+                        <input type="range" onchange="getYear()" min="1999" max="2016" value="1999" class="slider" id="myRange">
                     </div>
                 </div>
-            </div>
 
-            <div class="container">
+
                 <div class="d-flex justify-content-center">
-                    <svg width="900" height="600" fill="#FF0000">
-                            
-                                    <g class="grid x-grid">
-                                      <line x1="5" x2="5" y1="0" y2="550" stroke="#FF0000" stroke-width=".5"/>
-                                    </g>
-                                    <g class="grid y-grid">
-                                      <line x1="5" x2="850" y1="550" y2="550" stroke="#FF0000" stroke-width=".5"/>
-                                    </g>  
-
-                    </svg>
+                    <div class="stateHead"><h2></h2></div>
+                    <div class="yearHead"><h2></h2></div>
                 </div>
-            </div>
-        </body>
-    </html> 
+        </div>
+        <div class="d-flex justify-content-center">
+            <div id="graphic"></div>
+        </div>
+    </body>
+</html> 
