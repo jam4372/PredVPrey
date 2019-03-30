@@ -17,7 +17,7 @@ d3.select(".yearHead").select("h2")
 function scrollLanding() {
     var h = window.innerHeight;
     window.scrollTo(0, h);
-  }}
+}
 
 function getState() {
   state = event.srcElement.id;
