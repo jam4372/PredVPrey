@@ -7,6 +7,7 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
             <script src="https://d3js.org/d3.v5.min.js"></script>
+            <script src="https://d3js.org/topojson.v2.min.js"></script>
             <script src="PredvsPrey.js"></script> 
             <link rel="stylesheet" type="text/css" href="main.css">
             <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -91,8 +92,6 @@
                         <input type="range" onchange="getYear()" min="1999" max="2016" value="1999" class="slider" id="myRange">
                     </div>
                 </div>
-
-
                 <div class="d-flex justify-content-center">
                     <div class="stateHead"><h2></h2></div>
                     <div class="yearHead"><h2></h2></div>
@@ -101,5 +100,14 @@
         <div class="d-flex justify-content-center">
             <div id="graphic"></div>
         </div>
+        <div class="compare">
+            <button class="btn btn-outline-secondary" type="button" onclick="compare()"> Compare</button>
+        </div>     
+        <div class="d-flex justify-content-center">
+            <div id="graphic2">
+            </div>
+        </div>
+
+        <script src="https://d3js.org/topojson.v2.min.js"></script>
     </body>
 </html> 
