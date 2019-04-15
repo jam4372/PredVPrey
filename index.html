@@ -8,7 +8,7 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
             <script src="https://d3js.org/d3.v5.min.js"></script>
             <script src="https://d3js.org/topojson.v2.min.js"></script>
-            <script src="PredvsPrey.js"></script> 
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>            <script src="PredvsPrey.js"></script> 
             <link rel="stylesheet" type="text/css" href="main.css">
             <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
             <title>PredvsPrey</title>
@@ -80,7 +80,6 @@
                             <a class="dropdown-item" id="West Virginia" onclick="getState()">West Virginia</a>
                             <a class="dropdown-item" id="Wisconsin" onclick="getState()">Wisconsin</a>
                             <a class="dropdown-item" id="Wyoming" onclick="getState()">Wyoming</a>
-
                         </div>
                     </div>
                     <div class="yearHeader">
@@ -101,13 +100,27 @@
             <div id="graphic"></div>
         </div>
         <div class="compare">
-            <button class="btn btn-outline-secondary" type="button" onclick="compare()"> Compare</button>
-        </div>     
-        <div class="d-flex justify-content-center">
-            <div id="graphic2">
+            <button class="btn btn-outline-secondary" type="button" id="compButt" onclick="compare()"> Compare</button>
+        </div>   
+        <div class="stateSlide">
+            
+        </div>  
+        <div class="yearslide">
+                <h2></h2>
             </div>
+        <div class="d-flex justify-content-center">
+            <div id="graphic2"></div>
         </div>
-
-        <script src="https://d3js.org/topojson.v2.min.js"></script>
+        <table>
+                <tr>
+                <td>
+                    <div id='d3Id'></div>
+                </td>
+                <td>
+                    <div id='d2'></div>
+                </td>
+                </tr>
+                </table>   
+       
     </body>
 </html> 

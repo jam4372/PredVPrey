@@ -113,6 +113,8 @@ html, body {
     font: 12px sans-serif; 
     font-family: 'Montserrat', sans-serif;
     color: #c0ccd4;
+    text-align: center;
+    margin: auto;
 }
 
 .dropdown-menu{
@@ -184,7 +186,8 @@ h2 {
     max-width: 500px;
     margin: 0 auto;
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 50px;
+    padding-top: 2px;
 }
 
 .compare button{
@@ -203,15 +206,62 @@ h2 {
   }
 
   .states :hover {
-    fill: white;
+    fill: #484d5c;
+    stroke: #c0ccd4;
   }
-  
+
+  .states :active {
+    fill: white;
+    stroke: #484d5c;
+  }
+
   .state-borders {
-    fill: #c0ccd4;
-    stroke: black;
+    fill: none;
+    stroke: #c0ccd4;
     stroke-width: 0.5px;
     stroke-linejoin: round;
     stroke-linecap: round;
     pointer-events: none;
   }
   
+  #graphic2 {
+    padding-bottom: 150px;
+  }
+
+  .stateSlide {
+    width: 50%;
+    margin: auto;
+  }
+
+  table {
+      margin: auto;
+  }
+
+  .stateSlide text {
+    font-family: 'Oswald', sans-serif;
+    color: floralwhite;
+    font-size: 36pt;
+    text-align: center !important;
+    margin: auto;
+  }
+
+  .yearslide {
+    text-align: center;
+}
+
+.tooltip {
+  background: #c0ccd4;
+  opacity: .1;
+  border: 0;
+  border-radius: 8px;
+  font: 12px sans-serif; 
+  font-family: 'Montserrat', sans-serif;
+  color: #484d5c;
+  font-weight: bold;
+  height: 20px;
+  padding: 2px;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  width: 120px;
+}
