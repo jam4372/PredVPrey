@@ -673,7 +673,7 @@ function postUp() {
       if(count == 5 && cp == 0) {
         d3.select(".finalInfo").append("span")
         .attr("class", "conclusion")
-        .text("Lifestyle changes like avoiding tobacco, increasing physical activity, and eating healthier could significantly reduce deaths in the United States according to the CDC. These visualizations represents data from the CDC itself and articles published by the CDC that provide the leading causes of death in the U.S. Percentages by which these cuases would be decreased by limiting the given factors were also provided by the CDC. By limiting these it is estimated that a total of 260,000 lives could be prolonged and possibly a portion of them spared of the diseases to begin with. Click Reset to see statistics for a different origin state or year or click Compare to select a new comparison state from the map.")
+        .text("Lifestyle changes like avoiding tobacco, increasing physical activity, and eating healthier could significantly reduce deaths in the United States according to the CDC. These visualizations represents data from the CDC itself and articles published by the CDC that provide the leading causes of death in the U.S. Percentages by which these causes would be decreased by limiting the given factors were also provided by the CDC. By limiting these it is estimated that a total of 260,000 lives could be prolonged and possibly a portion of them spared of the diseases to begin with. Click Reset to see statistics for a different origin state or year or click Compare to select a new comparison state from the map.")
         cp++;
       }
 
