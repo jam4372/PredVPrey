@@ -144,8 +144,7 @@ function chartCreate() {
   if(count == 5) {
     reset();
   }
-  //call map for US map creation
-  map();
+  
 }
 
 //main chart creation
@@ -245,9 +244,12 @@ function compare(){
     buttonTrack++;
   }
 
+  //call map for US map creation
+  map();
+
   //scroll window to center map
   window.scrollBy(0,800);
-
+  
 }
 
 //create map and comparison graphs onclick
@@ -403,11 +405,13 @@ function map() {
           //set track back
           track2 == 0;
 
+           //load main comparison chart
+     resetChart1();
         });
 
-        //load main comparison chart
-      resetChart1();
+
     });
+
   
     //append path for borders on map
     svg.append("path")
@@ -494,16 +498,15 @@ function postUp() {
     .range([width, 0]);
 
     var x2 = d3.scaleLinear()
-    .range([width, 0]);
+    .range([0, width]);
       
-    //Determine domain to use based on max values
-    if (d3.max(dataset, function(d){ return d.value; }) > d3.max(dataset3, function(d){ return d.value; })) {
+    if (d3.max(upArray, function(d){ return d.value; }) > d3.max(dataset3, function(d){ return d.value; })) {
       x.domain([d3.max(upArray, function(d){ return d.value; }), 0])
-      x2.domain([0, d3.max(upArray, function(d){ return d.value; })])
+      x2.domain([d3.max(upArray, function(d){ return d.value; }), 0])
       y.domain(upArray.map(function(d) { return d.name; }));
     } else {
       x.domain([d3.max(dataset3, function(d){ return d.value; }), 0])
-      x2.domain([0, d3.max(dataset3, function(d){ return (d.value); })])
+      x2.domain([d3.max(dataset3, function(d){ return d.value; }), 0])
       y.domain(dataset3.map(function(d) { return d.name; }));
     }
 
@@ -876,29 +879,8 @@ function createButtons() {
       .attr('class', 'tooltip')
       .style('opacity', 0);
    
-      //API call year and state 
-      $.ajax({
-        url: "https://data.cdc.gov/resource/u4d7-xz8k.json?$where=year = "+year+"&state="+state+"",
-        type: "GET",
-        data: {
-          "$limit" : 5000,
-          "$$app_token" : "KfPXeWRyFx9V5TmvRttOfIaiV"
-        }
-      }).done(function(data) {
-        track2++;
-        track3++;
-        for(var i = 0; i <= data.length -1; i++) {
-          if(data[i]. _113_cause_name == "All Causes") {
-            continue;
-          } else {
-              var num = Number(data[i].deaths);
-              var name = String(data[i].cause_name);
-              dataset2.push({"name": name, "value": num});
-          }
-        }
-  
         //set data and sort
-        var data = dataset2;
+        var data = dataset;
         data.sort((a, b) => (a.name > b.name) ? 1 : -1);
 
         //remove and existing svg in #d3Id
@@ -951,7 +933,7 @@ function createButtons() {
               y.domain(data.map(function(d) { return d.name; }));
             } else {
               x.domain([d3.max(data3, function(d){ return d.value; }), 0])
-              x2.domain([0, d3.max(data3, function(d){ return d.value; })])
+              x2.domain([d3.max(data3, function(d){ return d.value; }), 0])
               y.domain(data3.map(function(d) { return d.name; }));
             }
 
@@ -996,7 +978,7 @@ function createButtons() {
       .attr("class", "axis")
       .attr('transform', 'translate(' + (550) + ', 0)')
       .call(d3.axisRight(y));
-    });
+  
 
     //renable buttons and reset count for new updates
     document.getElementById("tobacco").disabled = false;
