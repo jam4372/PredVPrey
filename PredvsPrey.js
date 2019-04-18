@@ -503,7 +503,7 @@ function postUp() {
       y.domain(upArray.map(function(d) { return d.name; }));
     } else {
       x.domain([d3.max(dataset3, function(d){ return d.value; }), 0])
-      x2.domain([0, d3.max(dataset3, function(d){ return d.value; })])
+      x2.domain([0, d3.max(dataset3, function(d){ return (d.value); })])
       y.domain(dataset3.map(function(d) { return d.name; }));
     }
 
@@ -637,26 +637,26 @@ function postUp() {
         bars.transition()
         .duration(1000)
         .attr("width", function(d) {
-          console.log(d);
+          //console.log(d);
           if(count == 0) {
           percentage2 = (x(d.value)* 5)/100
-          console.log(x(d.value) - percentage2)
+          //console.log(x(d.value) - percentage2)
           return Math.floor(x(d.value) - percentage2) 
           } else if(count == 1) {
             percentage2 = (x(d.value)* 10)/100
-          console.log(x(d.value) - percentage2)
+          //console.log(x(d.value) - percentage2)
           return Math.floor(x(d.value) - percentage2) 
           }  else if(count == 2) {
             percentage2 = (x(d.value)* 17.5)/100
-          console.log(x(d.value) - percentage2)
+          //console.log(x(d.value) - percentage2)
           return Math.floor(x(d.value) - percentage2) 
           }  else if(count == 3) {
             percentage2 = (x(d.value)* 24)/100
-          console.log(x(d.value) - percentage2)
+          //console.log(x(d.value) - percentage2)
           return Math.floor(x(d.value) - percentage2) 
           }  else if(count == 4) {
             percentage2 = (x(d.value)* 34)/100
-          console.log(x(d.value) - percentage2)
+          //console.log(x(d.value) - percentage2)
           return Math.floor(x(d.value) - percentage2) 
           }}) 
       
@@ -860,6 +860,12 @@ function createButtons() {
   //reset/create comparison chart 1
   function resetChart1() {
 
+    var data3 = dataset3;
+    data3.sort((a, b) => (a.name > b.name) ? 1 : -1);
+    //console.log(data3);
+
+    dataset2 = new Array();
+
     if(track3 == 1) {
       d3.select("#d3Id").select("svg").remove().exit();
       //console.log(track3),
@@ -898,9 +904,6 @@ function createButtons() {
         //remove and existing svg in #d3Id
         d3.select("#d3Id").select("svg").remove().exit();
 
-        //reinitialize dataset2
-        dataset2 = new Array();
-        //console.log(data);
 
         //set the dimensions and margins of the graph
         var margin = {top: 60, right: 165, bottom: 30, left: 60},
@@ -916,7 +919,7 @@ function createButtons() {
               .range([width, 0]);
 
             var x2 = d3.scaleLinear()
-            .range([width, 0]);
+            .range([0, width]);
               
       
             //append svg in #d3Id 
@@ -942,19 +945,17 @@ function createButtons() {
             .attr("fill", "floralwhite")
             .text(state);
 
-            console.log(dataset3);
-      //scale range in domains by max dataset comparison
-      if (d3.max(dataset, function(d){ return d.value; }) > d3.max(dataset3, function(d){ return d.value; })) {
-        console.log("hello")
-        x.domain([d3.max(dataset, function(d){ return d.value; }), 0])
-        x2.domain([0, d3.max(dataset, function(d){ return d.value; })])
-        y.domain(dataset.map(function(d) { return d.name; }));
-      } else {
-        console.log("hello2")
-        x.domain([d3.max(dataset3, function(d){ return d.value; }), 0])
-        x2.domain([0, d3.max(dataset3, function(d){ return d.value; })])
-        y.domain(dataset3.map(function(d) { return d.name; }));
-      }
+            if (d3.max(data, function(d){ return d.value; }) > d3.max(data3, function(d){ return d.value; })) {
+              x.domain([d3.max(data, function(d){ return d.value; }), 0])
+              x2.domain([d3.max(data, function(d){ return d.value; }), 0])
+              y.domain(data.map(function(d) { return d.name; }));
+            } else {
+              x.domain([d3.max(data3, function(d){ return d.value; }), 0])
+              x2.domain([0, d3.max(data3, function(d){ return d.value; })])
+              y.domain(data3.map(function(d) { return d.name; }));
+            }
+
+      
 
       //append rects and tooltips
       var bar = svg.selectAll(".bar")
