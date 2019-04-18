@@ -265,3 +265,54 @@ h2 {
   text-align: center;
   width: 120px;
 }
+.takeoff {
+    padding-top: 30px;
+    margin-bottom: 30px;
+    margin: auto;
+}
+.takeoff button {
+    
+        font-family: 'Oswald', sans-serif;
+        border-radius: 9px;
+        margin-right: 30px;
+        color: #c0ccd4;
+        font-size: 135%;
+        padding: 5px 20px;
+        border: solid #c0ccd4 3px;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block !important;
+    
+}
+
+.takeoff2 {
+    padding-top: 30px;
+    margin-bottom: 30px;
+  
+}
+.takeoff2 button {
+    
+        font-family: 'Oswald', sans-serif;
+        border-radius: 9px;
+        margin-right: 30px;
+        color: #c0ccd4;
+        font-size: 135%;
+        padding: 5px 20px;
+        border: solid #c0ccd4 3px;
+        text-transform: uppercase;
+        text-decoration: none;
+    
+}
+
+.finalInfo {
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 15px;
+}
+
+.conclusion {
+    font-family: 'Montserrat', sans-serif;
+    color: floralwhite;
+    font-size: 12pt;
+}
+
