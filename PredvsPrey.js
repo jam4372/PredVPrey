@@ -320,7 +320,7 @@ function map() {
         data.sort((a, b) => (a.name > b.name) ? 1 : -1);
       
         //set the dimensions and margins of the graph
-        var margin = {top: 60, right: 150, bottom: 30, left: 9},
+        var margin = {top: 60, right: 42.5, bottom: 30, left: 9},
         width = 550,
         height = 350;
       
@@ -776,7 +776,7 @@ function createButtons() {
         data.sort((a, b) => (a.name > b.name) ? 1 : -1);
       
         //set the dimensions and margins of the graph
-        var margin = {top: 60, right: 150, bottom: 30, left: 9},
+        var margin = {top: 60, right: 42.5, bottom: 30, left: 9},
         width = 550,
         height = 350;
       
@@ -888,7 +888,7 @@ function createButtons() {
 
 
         //set the dimensions and margins of the graph
-        var margin = {top: 60, right: 165, bottom: 30, left: 60},
+        var margin = {top: 60, right: 165, bottom: 30, left: 42.5},
         width = 550,
         height = 350;
     
